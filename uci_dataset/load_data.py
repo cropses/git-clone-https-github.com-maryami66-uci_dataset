@@ -500,3 +500,17 @@ def load_wilt():
     test = pd.read_csv(zipfile.open('testing.csv'), na_values=['?'])
     df = pd.concat([train, test])
     return df
+
+def load_covertype():
+    cover_type = {'name': 'Covertype',
+                       'uci_url': 'https://archive.ics.uci.edu/ml/machine-learning-databases/covtype/covtype.data.gz'}
+    cover_type_uci_url = cover_type['uci_url']
+    names = ['Elevation', 'Aspect', 'Slope', 'Horizontal_Distance_To_Hydrology', 
+             'Vertical_Distance_To_Hydrology', 'Horizontal_Distance_To_Roadways',
+             'Hillshade_9am', 'Hillshade_Noon', 'Hillshade_3pm', 'Horizontal_Distance_To_Fire_Points',
+             'Wilderness_Area_Rawah', 'Wilderness_Area_Neota', 'Wilderness_Area_Comanche_Peak',
+             'Wilderness_Area_Cache_la_Poudre']
+    soil_types = ['Soil_Type_2702','Soil_Type_2703','Soil_Type_2704','Soil_Type_2705','Soil_Type_2706','Soil_Type_2717','Soil_Type_3501','Soil_Type_3502','Soil_Type_4201','Soil_Type_4703','Soil_Type_4704','Soil_Type_4744','Soil_Type_4758','Soil_Type_5101','Soil_Type_5151','Soil_Type_6101','Soil_Type_6102','Soil_Type_6731','Soil_Type_7101','Soil_Type_7102','Soil_Type_7103','Soil_Type_7201','Soil_Type_7202','Soil_Type_7700','Soil_Type_7701','Soil_Type_7702','Soil_Type_7709','Soil_Type_7710','Soil_Type_7745','Soil_Type_7746','Soil_Type_7755','Soil_Type_7756','Soil_Type_7757','Soil_Type_7790','Soil_Type_8703','Soil_Type_8707','Soil_Type_8708','Soil_Type_8771','Soil_Type_8772','Soil_Type_8776']
+    cover_type = ['Cover_Type']
+    df = pd.read_csv(cover_type_uci_url, header=None, names=names+soil_types+cover_type, na_values=['?'])
+    return df
