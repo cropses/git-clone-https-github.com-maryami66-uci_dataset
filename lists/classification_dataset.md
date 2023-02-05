@@ -37,3 +37,4 @@
 35. [Thoracic Surgery](https://archive.ics.uci.edu/ml/datasets/Thoracic+Surgery+Data): load_thoracic_surgery()
 36. [Thyroid Disease](https://archive.ics.uci.edu/ml/datasets/thyroid+disease): load_thyroid_disease()
 37. [Wilt](https://archive.ics.uci.edu/ml/datasets/wilt): load_wilt()
+38. [Cover Type](https://archive.ics.uci.edu/ml/datasets/covertype): load_covertype()
